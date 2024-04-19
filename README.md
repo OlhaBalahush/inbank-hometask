@@ -28,3 +28,17 @@ What this query does:
 - The `INNER JOIN` with the `CURRENCIES` table ensures that only active currencies are included by checking if the `END_DATE` is `NULL`.
 - The `LEFT JOIN` with the `BLACKLIST` table and the `B.USER_ID` is `NULL` condition in the `WHERE` clause ensure that payments from blacklisted users are excluded.
 - It groups the results by the `TRANSACTION_DATE` and calculates the sum of the amounts in EUR.
+
+### Part 2: Weekend Data Processing (Python)
+
+The code for the second part of the task is located in `data_processing.py`, and the result of running the script is saved in `combined_data.csv`.
+
+This script reads the two CSV files, combines them, and adds a new column with the file generation date. The new combined CSV is then saved to `combined_data.csv`.
+
+To run the code, follow these steps:
+
+```
+pip install pandas
+
+python3 data_processing.py
+```
